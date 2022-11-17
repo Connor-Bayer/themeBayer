@@ -1,0 +1,25 @@
+---
+title: "Welcome to themeBayer"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(themeBayer)
+```
+
+Welcome to themeBayer, a simple extension to ggplot that enables usage of official bayer colors for presentations.
+
+In general, the workhorses of the package are the 
+
+Here's a basic usage example.
