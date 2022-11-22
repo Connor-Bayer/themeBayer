@@ -1,7 +1,10 @@
 ---
 title: "Basic Usage"
-output: html_document
-date: "2022-11-22"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic Usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include=FALSE}
