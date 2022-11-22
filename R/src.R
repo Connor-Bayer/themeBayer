@@ -38,7 +38,10 @@ bayer_colors <- list(
   lights = c(light_blue, light_green, fuchsia),
   darks = c(dark_blue, dark_green, dark_purple),
   mids = c(mid_blue, mid_green, mid_purple),
-  all = c(dark_blue, dark_purple, dark_green, light_blue, fuchsia, light_green, blue, green, mid_purple, mid_green, mid_blue, raspberry)
+  all = c(dark_blue, dark_purple, dark_green, light_blue, fuchsia, light_green, blue, green, mid_purple, mid_green, mid_blue, raspberry),
+  greens = c(dark_green, mid_green, light_green),
+  purples = c(dark_purple, mid_purple, raspberry, fuchsia),
+  blues = c(dark_blue, mid_blue, light_blue)
 )
 
 bayer_palettes <- function(name, n, all_palettes = bayer_colors, type = c("discrete", "continuous")) {
