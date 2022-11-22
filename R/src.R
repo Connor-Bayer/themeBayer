@@ -52,6 +52,8 @@ bayer_palettes <- function(name, n, all_palettes = bayer_colors, type = c("discr
   #' @param n Number of values you want from the palette
   #' @param all_palettes List of colors - generally autofilled (don't use)
   #' @param type string, type of scale either "discrete" or "continuous"
+  #' 
+  #' @export
   palette <- all_palettes[[name]]
   if (missing(n)) {
     n <- length(palette)
