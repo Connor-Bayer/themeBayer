@@ -115,12 +115,12 @@ scale_fill_bayer_c <- function(name, direction = 1) {
   #' @export
 
   if(direction < 0){
-    ggplot2::scale_colour_gradientn(colors = rev(bayer_palettes(name,
+    ggplot2::scale_fill_gradientn(colors = rev(bayer_palettes(name,
                                                        type = "continuous"
     )))
   }
   else{
-  ggplot2::scale_colour_gradientn(colors = bayer_palettes(name,
+  ggplot2::scale_fill_gradientn(colors = bayer_palettes(name,
     type = "continuous"
   ))
   }
