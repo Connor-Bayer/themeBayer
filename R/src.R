@@ -58,6 +58,9 @@ bayer_palettes <- function(name, n, all_palettes = bayer_colors, type = c("discr
   if (missing(n)) {
     n <- length(palette)
   }
+  else if(n > length(palette)){
+    type = 'continuous'
+  }
   type <- match.arg(type)
   out <- switch(type,
     continuous = grDevices::colorRampPalette(palette)(n),
