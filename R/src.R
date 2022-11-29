@@ -78,12 +78,12 @@ scale_color_bayer_c <- function(name, direction = 1) {
   #'
   #' @return scale
   #' @export
-  if(direction < 0){
+  if(direction < 0) {
     ggplot2::scale_colour_gradientn(colors = rev(bayer_palettes(name,
                                                          type = "continuous", n = NULL
     )))
   }
-  else{
+  else {
     ggplot2::scale_colour_gradientn(colors = bayer_palettes(name,
     type = "continuous",
     n = NULL
@@ -102,12 +102,12 @@ scale_color_bayer_d <- function(name, direction = 1, n = NULL) {
   #' @return scale
   #' @export
 
-  if(direction < 0){
+  if(direction < 0) {
     ggplot2::scale_colour_manual(values = rev(bayer_palettes(name,
                                                          type = "discrete", n
     )))
   }
-  else{
+  else {
   ggplot2::scale_colour_manual(values = bayer_palettes(name,
     type = "discrete", n
   ))
@@ -124,12 +124,13 @@ scale_fill_bayer_c <- function(name, direction = 1) {
   #' @return scale
   #' @export
 
-  if(direction < 0){
+  if(direction < 0) {
     ggplot2::scale_fill_gradientn(colors = rev(bayer_palettes(name,
-                                                       type = "continuous", n = NULL
+                                                       type = "continuous", 
+                                                              n = NULL
     )))
   }
-  else{
+  else {
   ggplot2::scale_fill_gradientn(colors = bayer_palettes(name,
     type = "continuous", n = NULL
   ))
@@ -147,19 +148,20 @@ scale_fill_bayer_d <- function(name, direction = 1, n = NULL) {
   #' @return scale
   #' @export
 
-  if(direction < 0){
+  if(direction < 0) {
     ggplot2::scale_fill_manual(values = rev(bayer_palettes(name,
-                                                       type = "discrete", n
+                                                       type = "discrete", 
+                                                            n = NULL
     )))
   }
-  else{
+  else { 
     ggplot2::scale_fill_manual(values = bayer_palettes(name,
-    type = "discrete", n
+    type = "discrete", n = NULL
   ))
   }
 }
 
-.onLoad <- function(libname, pkgname){
+.onLoad <- function(libname, pkgname) {
   dark_blue <- "#10384f"
   mid_blue <- "#00617f"
   blue <- "#0091df"
