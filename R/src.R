@@ -64,7 +64,7 @@ bayer_palettes <- function(name, n, all_palettes = bayer_colors, type = c("discr
   type <- match.arg(type)
   out <- switch(type,
     continuous = grDevices::colorRampPalette(palette)(n),
-    discrete = palette[1:n]
+    discrete = grDevices::colorRampPalette(palette)(n)
   )
   structure(out, name = name, class = "palette")
 }
