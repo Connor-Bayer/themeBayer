@@ -39,9 +39,9 @@ bayer_colors <- list(
   darks = c(dark_blue, dark_green, dark_purple),
   mids = c(mid_blue, mid_green, mid_purple),
   all = c(dark_blue, dark_purple, dark_green, light_blue, fuchsia, light_green, blue, green, mid_purple, mid_green, mid_blue, raspberry),
-  greens = c(dark_green, mid_green, light_green),
+  greens = c(dark_green, mid_green, green, light_green),
   purples = c(dark_purple, mid_purple, raspberry, fuchsia),
-  blues = c(dark_blue, mid_blue, light_blue)
+  blues = c(dark_blue, mid_blue, blue, light_blue)
 )
 
 bayer_palettes <- function(name, n, all_palettes = bayer_colors, type = c("discrete", "continuous")) {
@@ -55,11 +55,11 @@ bayer_palettes <- function(name, n, all_palettes = bayer_colors, type = c("discr
   #' 
   #' @export
   palette <- all_palettes[[name]]
-  if (missing(n)) {
+  if (missing(n)|is.null(n)) {
     n <- length(palette)
   }
-  else if(n > length(palette)){
-    type = 'continuous'
+  if (n > length(palette)) {
+    type = "continuous"
   }
   type <- match.arg(type)
   out <- switch(type,
@@ -80,34 +80,36 @@ scale_color_bayer_c <- function(name, direction = 1) {
   #' @export
   if(direction < 0){
     ggplot2::scale_colour_gradientn(colors = rev(bayer_palettes(name,
-                                                         type = "continuous"
+                                                         type = "continuous", n = NULL
     )))
   }
   else{
     ggplot2::scale_colour_gradientn(colors = bayer_palettes(name,
-    type = "continuous"
+    type = "continuous",
+    n = NULL
   ))
   }
 }
 
-scale_color_bayer_d <- function(name, direction = 1) {
+scale_color_bayer_d <- function(name, direction = 1, n = NULL) {
   #' Returns a ggplot-compatible palette object for continuous colors
   #'
   #' Provides a discrete color ggplot theme object that corresponds to official Bayer color schema
   #' @param name Name of palette that you want to use
   #' @param direction integer: if negative, use reverse order of colors.
+  #' @param n integer: (Optional) number of draws from palette desired
   #'
   #' @return scale
   #' @export
 
   if(direction < 0){
     ggplot2::scale_colour_manual(values = rev(bayer_palettes(name,
-                                                         type = "discrete"
+                                                         type = "discrete", n
     )))
   }
   else{
   ggplot2::scale_colour_manual(values = bayer_palettes(name,
-    type = "discrete"
+    type = "discrete", n
   ))
   }
 }
@@ -124,34 +126,35 @@ scale_fill_bayer_c <- function(name, direction = 1) {
 
   if(direction < 0){
     ggplot2::scale_fill_gradientn(colors = rev(bayer_palettes(name,
-                                                       type = "continuous"
+                                                       type = "continuous", n = NULL
     )))
   }
   else{
   ggplot2::scale_fill_gradientn(colors = bayer_palettes(name,
-    type = "continuous"
+    type = "continuous", n = NULL
   ))
   }
 }
 
-scale_fill_bayer_d <- function(name, direction = 1) {
+scale_fill_bayer_d <- function(name, direction = 1, n = NULL) {
   #' Returns a ggplot-compatible palette object for continuous colors
   #'
   #' Provides a discrete fill ggplot theme object that corresponds to official Bayer color schema
   #' @param name Name of palette that you want to use
   #' @param direction integer: if negative, use reverse order of colors.
+  #' @param n integer: (Optional) number of draws from palette desired
   #'
   #' @return scale
   #' @export
 
   if(direction < 0){
     ggplot2::scale_fill_manual(values = rev(bayer_palettes(name,
-                                                       type = "discrete"
+                                                       type = "discrete", n
     )))
   }
   else{
     ggplot2::scale_fill_manual(values = bayer_palettes(name,
-    type = "discrete"
+    type = "discrete", n
   ))
   }
 }
