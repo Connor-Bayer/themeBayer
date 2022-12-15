@@ -1,7 +1,7 @@
 Package: themeBayer
 Type: Package
 Title: GGPlot-Enabled Palettes that Align with Bayer Colors
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(person("Connor", "Lennon", email = "connor.lennon.ext@bayer.com", role = c("aut", "cre")), person("Spencer", "Matthews", email = 'spencer.matthews@bayer.com', role = c('aut', 'ctb')))
 Maintainer: Connor Lennon <connor.lennon.ext@bayer.com>
 Description: A function that allows Bayer-Specific themes for creating
