@@ -1,0 +1,5 @@
+name: Bayer RMarkdown PDF
+description: >
+   A PDF RMarkdown Template with the Bayer Logo in the upper-righthand corner
+   and numbered sections.
+create_dir: FALSE

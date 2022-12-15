@@ -1,0 +1,33 @@
+---
+title: "Project Name"
+subtitle: "Document Name"
+author: "Your Name Here - `r format(Sys.Date(), '%d %B %Y')`"
+output:
+  pdf_document:
+    fig_caption: yes
+    number_section: true
+    extra_dependencies: 
+      natbib: ["square", "numbers"]
+      fancyhdr: null
+---
+
+<!-- This code includes the header image, DO NOT DELETE! -->
+\addtolength{\headheight}{1.0cm}
+\pagestyle{fancyplain}
+\rhead{\includegraphics[height=1.2cm]{logo.jpg}}
+<!-- header image included -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(themeBayer)
+```
+
+# Bayer `RMarkdown` Template
+
+This template is meant to serve as a simple way to get nice-looking `.Rmd` documents that are somewhat related to the Bayer theme.
+
+## Some Useful Tips
+
+- If you would like to change the logo image to something else, replace `logo.jpg` with a different file.
+- To add latex packages to the file so they can be used in knitting, add a line underneath `fancyhdr: null` in the YAML header. More information on including Latex packages in this way can be seen in [the RMarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/latex-extra.html#loading-latex-packages).
