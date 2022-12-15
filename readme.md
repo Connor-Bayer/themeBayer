@@ -8,7 +8,10 @@ company-official color schemes for ggplot. The main additions to the
 ggplot library are color and fill color maps.
 
 In general, you can use this package after install by invoking
-`myplot + themeBayer::scale_(color/fill)_bayer_(c/d)()`.
+`myplot + 
+themeBayer::scale_<color or fill>_bayer_<c (continuous) or d (discrete))()`. 
+
+Eg: `scale_color_bayer_c('lights')`
 
 Additionally, there is a rmarkdown template included as part of the
 package that you can use to make your pdf documents include bayer
