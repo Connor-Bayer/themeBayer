@@ -2,6 +2,7 @@
 
 * Added a Bayer themed RMarkdown template
 * Updated readme.md
+* Add 'colour' style functions
 
 # themeBayer 0.1.0
 
