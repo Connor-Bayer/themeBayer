@@ -16,7 +16,7 @@ symbols/logo and may be themed using the functions in this package.
 
 The list of available palettes are:
 
-`blue\_green, purple\_green, lights, darks, mids, greens, purples, blues, all`
+`blue_green, purple_green, lights, darks, mids, greens, purples, blues, all`
 
 ## Basic Usage
 
