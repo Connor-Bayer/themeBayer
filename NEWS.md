@@ -1,6 +1,7 @@
 # themeBayer 0.1.1
 
 * Added a Bayer themed RMarkdown template
+* Updated readme.md
 
 # themeBayer 0.1.0
 
