@@ -44,6 +44,7 @@ bayer_colors <- list(
   blues = c(dark_blue, mid_blue, blue, light_blue)
 )
 
+
 bayer_palettes <- function(name, n, all_palettes = bayer_colors, type = c("discrete", "continuous")) {
   #' Returns a ggplot-compatible palette object
   #'
@@ -78,12 +79,12 @@ scale_color_bayer_c <- function(name, direction = 1) {
   #'
   #' @return scale
   #' @export
-  if(direction < 0) {
+  if(direction < 0){
     ggplot2::scale_colour_gradientn(colors = rev(bayer_palettes(name,
                                                          type = "continuous", n = NULL
     )))
   }
-  else {
+  else{
     ggplot2::scale_colour_gradientn(colors = bayer_palettes(name,
     type = "continuous",
     n = NULL
@@ -102,15 +103,60 @@ scale_color_bayer_d <- function(name, direction = 1, n = NULL) {
   #' @return scale
   #' @export
 
-  if(direction < 0) {
+  if(direction < 0){
     ggplot2::scale_colour_manual(values = rev(bayer_palettes(name,
                                                          type = "discrete", n
     )))
   }
-  else {
+  else{
   ggplot2::scale_colour_manual(values = bayer_palettes(name,
     type = "discrete", n
   ))
+  }
+}
+
+scale_colour_bayer_c <- function(name, direction = 1) {
+  #' Returns a ggplot-compatible palette object for continuous colors
+  #'
+  #' Provides a continuous color ggplot theme object that corresponds to official Bayer color schema
+  #' @param name Name of palette that you want to use
+  #' @param direction integer: if negative, use reverse order of colors.
+  #'
+  #' @return scale
+  #' @export
+  if(direction < 0){
+    ggplot2::scale_colour_gradientn(colors = rev(bayer_palettes(name,
+                                                                type = "continuous", n = NULL
+    )))
+  }
+  else{
+    ggplot2::scale_colour_gradientn(colors = bayer_palettes(name,
+                                                            type = "continuous",
+                                                            n = NULL
+    ))
+  }
+}
+
+scale_colour_bayer_d <- function(name, direction = 1, n = NULL) {
+  #' Returns a ggplot-compatible palette object for continuous colors
+  #'
+  #' Provides a discrete color ggplot theme object that corresponds to official Bayer color schema
+  #' @param name Name of palette that you want to use
+  #' @param direction integer: if negative, use reverse order of colors.
+  #' @param n integer: (Optional) number of draws from palette desired
+  #'
+  #' @return scale
+  #' @export
+  
+  if(direction < 0){
+    ggplot2::scale_colour_manual(values = rev(bayer_palettes(name,
+                                                             type = "discrete", n
+    )))
+  }
+  else{
+    ggplot2::scale_colour_manual(values = bayer_palettes(name,
+                                                         type = "discrete", n
+    ))
   }
 }
 
@@ -124,13 +170,12 @@ scale_fill_bayer_c <- function(name, direction = 1) {
   #' @return scale
   #' @export
 
-  if(direction < 0) {
+  if(direction < 0){
     ggplot2::scale_fill_gradientn(colors = rev(bayer_palettes(name,
-                                                       type = "continuous", 
-                                                              n = NULL
+                                                       type = "continuous", n = NULL
     )))
   }
-  else {
+  else{
   ggplot2::scale_fill_gradientn(colors = bayer_palettes(name,
     type = "continuous", n = NULL
   ))
@@ -148,20 +193,19 @@ scale_fill_bayer_d <- function(name, direction = 1, n = NULL) {
   #' @return scale
   #' @export
 
-  if(direction < 0) {
+  if(direction < 0){
     ggplot2::scale_fill_manual(values = rev(bayer_palettes(name,
-                                                       type = "discrete", 
-                                                            n = NULL
+                                                       type = "discrete", n
     )))
   }
-  else { 
+  else{
     ggplot2::scale_fill_manual(values = bayer_palettes(name,
-    type = "discrete", n = NULL
+    type = "discrete", n
   ))
   }
 }
 
-.onLoad <- function(libname, pkgname) {
+.onLoad <- function(libname, pkgname){
   dark_blue <- "#10384f"
   mid_blue <- "#00617f"
   blue <- "#0091df"
