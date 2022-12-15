@@ -4,14 +4,15 @@ Title: GGPlot-Enabled Palettes that Align with Bayer Colors
 Version: 0.1.1
 Authors@R: c(person("Connor", "Lennon", email = "connor.lennon.ext@bayer.com", role = c("aut", "cre")), person("Spencer", "Matthews", email = 'spencer.matthews@bayer.com', role = c('aut', 'ctb')))
 Maintainer: Connor Lennon <connor.lennon.ext@bayer.com>
-Description: A function that allows Bayer-Specific themes for creating
+Description: A set of functions that allows Bayer-Specific themes for creating
     easy color-themed plots for internal or external presentations. Allows for
-    both 'official' discrete color scales and 'unofficial' continuous ones.
+    both 'official' discrete color scales and 'unofficial' continuous ones. Additionally
+    created a markdown template for internal documents.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: ggplot2
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.2
 Suggests: 
     knitr,
     rmarkdown
