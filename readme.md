@@ -8,10 +8,7 @@ company-official color schemes for ggplot. The main additions to the
 ggplot library are color and fill color maps.
 
 In general, you can use this package after install by invoking
-`myplot + 
-themeBayer::scale_<color or fill>_bayer_<c (continuous) or d (discrete))()`. 
-
-Eg: `scale_color_bayer_c('lights')`
+`myplot + themeBayer::scale_(color/fill)_bayer_(c/d)()`.
 
 Additionally, there is a rmarkdown template included as part of the
 package that you can use to make your pdf documents include bayer
@@ -75,3 +72,30 @@ interpolated between existing points.
 ### all
 
 ![](readme_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+
+## Bayer RMarkdown Template
+
+To aid in the creation of nice-looking Bayer-themed reports, we have
+added an RMarkdown template to the `themeBayer` package. Once the
+package is installed, you can use the template through the typical new
+RMarkdown file interface:
+
+1.  Select File &gt; New File &gt; RMarkdown ![](inst/img/new_rmd.png)
+
+2.  In the resulting pop-up window, select the bottom option in the left
+    sidebar, “From Template” and you should see “Bayer RMarkdown PDF” as
+    an option near the top of the list (it is sorted alphabetically).
+    ![](inst/img/rmd_menu.png)
+
+3.  Ensure to select a location for the RMarkdown document. Because this
+    template includes files other than just the .Rmd template (i.e.,
+    they Bayer logo .png) the system will create a folder in the target
+    directory that contains the .Rmd and all necessary files.
+
+4.  Begin working on the RMarkdown template! When knit immediately after
+    opening the template has the following look (and each subsequent
+    page has a header including the page number, section, and small
+    Bayer logo): ![](inst/img/pdf_template.png)
+
+Note that currently there is only a PDF version of this template, but in
+the future HTML and possible .md templates will be added.
