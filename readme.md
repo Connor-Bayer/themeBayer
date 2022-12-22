@@ -7,6 +7,8 @@ for internal coordination of R presentations and to ease the use of
 company-official color schemes for ggplot. The main additions to the
 ggplot library are color and fill color maps.
 
+In addition, there is an included rmd template for labeling pdfs with the bayer logo.
+
 In general, you can use this package after install by invoking
 `myplot + themeBayer::scale_(color/fill)_bayer_(c/d)()`.
 
