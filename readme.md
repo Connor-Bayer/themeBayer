@@ -9,6 +9,8 @@ ggplot library are color and fill color maps.
 
 In addition, there is an included rmd template for labeling pdfs with the bayer logo.
 
+To install, use the standard method for installing github packages: `devtools::install_github('Connor-Bayer/themeBayer')`
+
 In general, you can use this package after install by invoking
 `myplot + themeBayer::scale_(color/fill)_bayer_(c/d)()`.
 
